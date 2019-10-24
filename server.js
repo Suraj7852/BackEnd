@@ -30,7 +30,7 @@ mongoose.connect(dbConfig.url, {
 });
 
  const server=app.listen(3000, ()=> {
-    console.log("Server is running on Port: ");
+    console.log("Server is running on Port: 3000");
 });
 
 let io=socketIO(server);
