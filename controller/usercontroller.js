@@ -5,17 +5,17 @@ const service = require('../services/userservice');
 class UserController {
     registration(req, res) {
         try {
-            req.checkBody('firstName', 'should not be empty').notEmpty();
-            req.checkBody('lastName', 'should not be empty').notEmpty();
-            req.checkBody('email', 'email should not be empty').notEmpty();
-            req.checkBody('email', 'email sould be valide').isEmail();
+            // req.checkBody('firstName', 'should not be empty').notEmpty();
+            // req.checkBody('lastName', 'should not be empty').notEmpty();
+            // req.checkBody('email', 'email should not be empty').notEmpty();
+            // req.checkBody('email', 'email sould be valide').isEmail();
 
-            req.checkBody('password', 'password should be have length 6 ').isLength({ min: 6 })
-            req.checkBody('password', 'password should be have max length 12').isLength({ max: 12 })
+            // req.checkBody('password', 'password should be have length 6 ').isLength({ min: 6 })
+            // req.checkBody('password', 'password should be have max length 12').isLength({ max: 12 })
 
-            let error = req.validationErrors();//returns validation errors
+            // let error = req.validationErrors();//returns validation errors
             let response = {};//create response object
-
+            let error = false;
             if (error) {
                 /** make response array with it's field */
                 response.suceess = false;
@@ -60,15 +60,15 @@ class UserController {
         try {
             console.log("in controller");
 
-            req.checkBody('email', 'email should not be empty').notEmpty();
-            req.checkBody('email', 'email should be valide').isEmail();
+            // req.checkBody('email', 'email should not be empty').notEmpty();
+            // req.checkBody('email', 'email should be valide').isEmail();
 
-            req.checkBody('password', 'password should be have length 6 ').isLength({ min: 6 });
-            req.checkBody('password', 'password should be have max length 12').isLength({ max: 12 });
+            // req.checkBody('password', 'password should be have length 6 ').isLength({ min: 6 });
+            // req.checkBody('password', 'password should be have max length 12').isLength({ max: 12 });
 
-            let error = req.validationErrors();//returns validation error
+            // let error = req.validationErrors();//returns validation error
             let response = {};
-
+            let error = false;
             if (error) {
                 /** make response array with it's field */
                 response.success = false;
@@ -111,12 +111,12 @@ class UserController {
     forgetPassword(req, res) {
         try {
 
-            req.checkBody('email', 'email should not be empty').notEmpty();
-            req.checkBody('email', 'email should be valide').isEmail();
+            // req.checkBody('email', 'email should not be empty').notEmpty();
+            // req.checkBody('email', 'email should be valide').isEmail();
 
-            let error = req.validationErrors();//returns validation error
+            // let error = req.validationErrors();//returns validation error
             let response = {};
-
+            let error = false;
             if (error) {
                 /** make response array with it's field */
                 response.suceess = false;
@@ -152,24 +152,6 @@ class UserController {
                     res.status(422).send(response)
                 })
 
-                // service.forgetPasswordService(userForgetPasswordDataObject, (err, data) => {
-                //     if (err) {
-                //         /** make response array with it's field */
-                //         response.success = false;
-                //         response.message = "Email sending failed for forget password"
-                //         response.error = err;
-                //         /** send respose to server  */
-                //         res.status(422).send(response)
-                //     } else {
-                //         /** make response array with it's field */
-                //         response.success = true;
-                //         response.message = "Email sending successfully for forget password"
-                //         response.content = data;
-                //         /** send respose to server  */
-                //         res.status(200).send(response)
-                //     }
-
-                // })
             }
         } catch (e) {
             console.log(e);
@@ -181,14 +163,14 @@ class UserController {
 
             console.log("req data", JSON.stringify(req.token._id));
 
-            req.checkBody('password', 'password should be have length 6 ').isLength({ min: 6 })
-            req.checkBody('password', 'password should be have max length 20').isLength({ max: 20 })
+            // req.checkBody('password', 'password should be have length 6 ').isLength({ min: 6 })
+            // req.checkBody('password', 'password should be have max length 20').isLength({ max: 20 })
 
-            console.log("backend controller called ");
+            // console.log("backend controller called ");
 
-            let error = req.validationErrors();
+            // let error = req.validationErrors();
             let response = {};
-
+            let error = false;
             if (error) {
                 /** make response array with it's field */
                 response.suceess = false;

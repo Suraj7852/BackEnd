@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var mongoose =require('mongoose');
-var expressValidator=require('express-validator');
+//var expressValidator=require('express-validator');
 const chatController=require('./controller/chatcontroller')
 const dbConfig = require('./config/config')
 mongoose.set('useCreateIndex', true);//deprecation warning hiding
@@ -13,7 +13,7 @@ var router = require('./routes/routes');
 
 app.use(express.static('../FrontEnd')) //front end connection 
 
-app.use(expressValidator());
+//app.use(expressValidator());
 
 app.use(bodyParser.json());
 
